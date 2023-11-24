@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         //para definir as posições das imagens e calcular as posições possiveis
         function imagePosition() {
             const maxX = window.innerWidth - image.width;
-            const maxY = window.innerHeight - image.height ;
-            const newX = Math.floor(Math.random() * maxX -100);
+            const maxY = window.innerHeight - image.height;
+            const newX = Math.floor(Math.random() * maxX - 100);
             const newY = Math.floor(Math.random() * maxY);
 
             return { x: newX, y: newY };

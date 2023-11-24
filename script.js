@@ -123,11 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Reposicione as flores quando a janela é redimensionada
     const flores = document.querySelectorAll('.flor');
     flores.forEach(flor => {
-        setRandomPosition(flor);
+      setRandomPosition(flor);
     });
-} 
+  }
 
-window.addEventListener('resize', handleResize);
+  window.addEventListener('resize', handleResize);
 });
 
 
