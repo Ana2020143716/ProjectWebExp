@@ -7,21 +7,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function moveImage(image) {
-        //calcular tamanho maximo
-        const maxX = window.innerWidth - image.width;
-        const maxY = window.innerHeight - image.height;
 
+        //para definir as posições das imagens e calcular as posições possiveis
+        function imagePosition() {
+            const maxX = window.innerWidth - image.width;
+            const maxY = window.innerHeight - image.height ;
+            const newX = Math.floor(Math.random() * maxX -100);
+            const newY = Math.floor(Math.random() * maxY);
+
+            return { x: newX, y: newY };
+        }
+
+        //abrir a imagem quando clica
         image.addEventListener('click', function () {
             openImage(image.src);
         });
+        //para redefinir a posição da imagem quando redimensionamos a pagina
+        function updatePosition() {
+            const position = imagePosition();
+            image.style.transform = `translate(${position.x}px, ${position.y}px)`;
+        }
 
-        setInterval(function () {
-            const x = Math.floor(Math.random() * maxX);
-            const y = Math.floor(Math.random() * (maxY-150));
+        // Mova a imagem inicialmente
+        updatePosition();
 
-            image.style.transform = `translate(${x}px, ${y}px)`;
-
-        }, 4000);
+        setInterval(updatePosition, 4000);
     }
 
     //abrir e fechar a imagem
@@ -40,4 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const closeButton = document.querySelector('.close');
     closeButton.addEventListener('click', closeContent);
+
+
 });
+
+

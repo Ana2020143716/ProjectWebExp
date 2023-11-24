@@ -115,8 +115,19 @@ document.addEventListener("DOMContentLoaded", function () {
     element.style.top = `${randomTop}px`;
     element.style.left = `${randomLeft}px`;
   }
+
+  function handleResize() {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+
+    // Reposicione as flores quando a janela é redimensionada
+    const flores = document.querySelectorAll('.flor');
+    flores.forEach(flor => {
+        setRandomPosition(flor);
+    });
+} 
+
+window.addEventListener('resize', handleResize);
 });
-
-
 
 

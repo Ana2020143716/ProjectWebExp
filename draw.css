@@ -1,0 +1,93 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    cursor: url('./images/pen.png') 0 24, auto;
+}
+
+/*footer*/
+.horizontal-footer {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    overflow: hidden;
+    bottom: 0%;
+    left: 0%;
+    width: 200%;
+    background-color: #202020;
+}
+
+/*footer a rodar*/
+.footer {
+    animation: slideLeft 15s linear infinite;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-0.5%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.horizontal-footer a {
+    color: white;
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.2% 20% 0.2% 20%;
+}
+
+ul {
+    display: table;
+    table-layout: fixed;
+}
+
+.footer>li {
+    color: white;
+    text-align: center;
+    list-style: none;
+    font-size: 120%;
+    display: table-cell;
+}
+
+.horizontal-footer a:hover {
+    background-color: #ccc;
+    color: #202020;
+}
+
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 300%;
+    user-select: none;
+}
+
+.text {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+}
+
+@media (min-width: 600px) {
+    canvas {
+        display: block;
+    }
+}
+
+/* Estilos para telas menores que 600 pixels de largura (ajuste conforme necessário) */
+@media (max-width: 599px) {
+    canvas {
+        display: none;
+    }
+}
