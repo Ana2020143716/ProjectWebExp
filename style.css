@@ -85,7 +85,6 @@ body * {
 ul {
   display: table;
   table-layout: fixed;
-  user-select: none;
 }
 
 .footer>li {
