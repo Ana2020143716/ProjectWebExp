@@ -1,0 +1,101 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+}
+
+/*imagens a mexer*/
+.move-image {
+  position: absolute;
+  width: 15%;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+/*quando se clica na imagem*/
+.clickContent {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 2%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.content-open {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/*para fechar a imagem*/
+.close {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  color: #f1f1f1;
+  font-size: 300%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*footer*/
+.horizontal-footer {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  overflow: hidden;
+  bottom: 0%;
+  left: 0%;
+  width: 200%;
+  background-color: #202020;
+}
+
+/*footer a rodar*/
+.footer {
+  animation: slideLeft 15s linear infinite;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-0.5%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.horizontal-footer a {
+  color: white;
+  display: block;
+  float: left;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.2% 20% 0.2% 20%;
+}
+
+ul {
+  display: table;
+  table-layout: fixed;
+}
+
+.footer>li {
+  color: white;
+  text-align: center;
+  list-style: none;
+  font-size: 120%;
+  display: table-cell;
+}
+
+.horizontal-footer a:hover {
+  background-color: #ccc;
+  color: #202020;
+}
